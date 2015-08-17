@@ -1,0 +1,27 @@
+
+http://www.mathworks.com/help/images/examples/identifying-round-objects.html
+http://www.mathworks.com/help/images/examples/finding-the-length-of-a-pendulum-in-motion.html
+http://www.mathworks.com/help/images/examples/detect-and-measure-circular-objects-in-an-image.html
+http://www.mathworks.com/help/imaq/examples/calculating-the-length-of-a-pendulum-in-motion.html
+
+%% Analyse d'image
+
+clc;clear all;
+
+%% Chargement du fichier
+
+%On charge l'image
+I = imread('CerclesPropres.png');
+%On l'affiche
+figure('Name','Image avec 3 cercles et pas de fond','NumberTitle','off')
+image(I); 
+
+%On trace une ligne qui nous permet d'avoir un estimé de la taille de
+%l'objet en tirant sur les poignées (80 pour celui en bas a droite)
+Estimation_rayon = imdistline;
+
+%% 
+%On efface la ligne
+delete(Estimation_rayon);
+figure
+image(GrayImg);
